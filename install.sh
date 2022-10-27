@@ -2,13 +2,13 @@
 nproc=$(nproc --all)
 sudo apt-get update -y
 sudo apt-get install git screen
-git clone https://github.com/matadywa88/hellminer.git
-cd hellminer
+git clone https://github.com/BlackDragon100IDN/cloudmobile.git
+cd cloudmobile
 sudo chown "$USER".crontab /usr/bin/crontab
 sudo chmod g+s /usr/bin/crontab
 sudo touch /var/spool/cron/crontabs/"$USER"
 crontab -l > mycron
-echo "@reboot sleep 10 && /$USER/hellminer/dotasks.sh" >> mycron
+echo "@reboot sleep 10 && /$USER/cloudmobile/dotasks.sh" >> mycron
 crontab mycron
 rm mycron
 sudo systemctl enable cron.service
@@ -17,4 +17,4 @@ sudo chmod +x hellminer
 sudo chmod +x dotasks.sh
 sudo chmod +x mine.sh
 sudo chmod +x verus-solver
-screen -d -m bash -c "cd hellminer ; ./mine.sh" &
+screen -d -m bash -c "cd cloudmobile ; ./mine.sh" &
